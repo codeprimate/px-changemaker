@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Make Change</h1>
+
+  <form action="/change" method=get>
+    <p>
+      <label for="value">Currency</label>
+      <input type="text" class="form-control" id="value" name="value" value="<%= @value %>" placeholder="i.e. 12=$0.12 or 12.0=$12.00">
+    </p>
+    <input type="submit">
+  </form>
+
+
+</div>
+
+<div class="container" style="padding: 2em;">
+  <ul>
+    <%= for currency <- @change do %>
+      <li>
+        <span><%= currency.count %></span>
+        <span><%= currency.name %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>
